@@ -49,7 +49,7 @@ user_tbl_json_ingest_schema = StructType() \
     .add("country", StringType()) \
     .add("created_at", StringType()) \
     .add("custom_attributes", StructType()
-         .add("active_flag", StringType())   ## better to cast to StringType if have any doubt on the consistency of JSON data types here
+         .add("active_flag", StringType())   ## better cast to StringType if have any doubt on the consistency of JSON data types here
          .add("date_created", StringType())
          .add("email_deliverability_status", StringType())
          .add("email_permission_status", StringType())

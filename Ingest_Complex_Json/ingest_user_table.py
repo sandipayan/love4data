@@ -25,6 +25,7 @@ class Processor:
 
     def process(self):
 
+        # file types are with certain name, and we want to identify while file type data belongs to
         def find_brand(s3_path):
             if s3_path.count('xxx') > 0:
                 return 'type1'
@@ -54,6 +55,7 @@ def user_profile_data_parse_args(args):
     description = "spark etl Job for user_profile data"
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument("-n", "--app_name", help="user_profile", required=True)
+    # with nargs='+' there can be multiple input s3 paths separated by space
     parser.add_argument("-i", "--input_location", nargs='+', default=[], help=" user_profile raw data S3 location", required=True)
     parser.add_argument("-os", "--output_stg_location", help="hive location foruser_profile staging data", required=True)
     return parser.parse_args(args)
